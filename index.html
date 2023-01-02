@@ -12,6 +12,19 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="styles.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css"> -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/dark.min.css"
+    /> -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/atelier-dune.min.css"
+    />
   </head>
   <body class="fluid-container">
     <!-- Check this to full the page https://github.com/lukehoban/es6features -->
@@ -53,7 +66,7 @@
             Unlike functions, arrows share the same lexical <code>this</code> as
             their surrounding code.
           </p>
-          <pre><code> 
+          <pre><code class="language-javascript"> 
     // Expression bodies
     var odds = evens.map(v => v + 1);
     var nums = evens.map((v, i) => v + i);
@@ -85,7 +98,7 @@
             prototype-based inheritance, super calls, instance and static
             methods and constructors.
           </p>
-          <pre><code>
+          <pre><code class="language-javascript">
     class SkinnedMesh extends THREE.Mesh {
       constructor(geometry, materials) {
         super(geometry, materials);
@@ -120,7 +133,7 @@
             construction to be customized, avoiding injection attacks or
             constructing higher level data structures from string contents.
           </p>
-          <pre><code>
+          <pre><code class="language-javascript">
     // Basic literal string creation
     `In JavaScript '\n' is a line-feed.`
     
@@ -148,7 +161,7 @@
             to standard object lookup <code>foo["bar"]</code>, producing
             <code>undefined</code> values when not found.
           </p>
-          <pre><code>
+          <pre><code class="language-javascript">
     // list matching
     var [a, , b] = [1,2,3];
 
@@ -182,7 +195,7 @@
             <code>var</code>. <code>const</code> is single-assignment. Static
             restrictions prevent use before assignment.
           </p>
-          <pre><code>
+          <pre><code class="language-javascript">
     function f() {
       {
         let x;
@@ -215,7 +228,7 @@
             iterator-based iteration with <code>for..of</code>. Don't require
             realizing an array, enabling lazy design patterns like LINQ.
           </p>
-          <pre><code>
+          <pre><code class="language-javascript">
     let fibonacci = {
       [Symbol.iterator]() {
         let pre = 0, cur = 1;
@@ -239,7 +252,7 @@
             Iteration is based on these duck-typed interfaces (using TypeScript
             type syntax for exposition only):
           </p>
-          <pre><code>
+          <pre><code class="language-javascript">
     interface IteratorResult {
       done: boolean;
       value: any;
@@ -261,19 +274,19 @@
             loader. Implicitly async model - no code executes until requested
             modules are available and processed.
           </p>
-          <pre><code>
+          <pre><code class="language-javascript">
     // lib/math.js
     export function sum(x, y) {
       return x + y;
     }
     export var pi = 3.141593;
           </code></pre>
-          <pre><code>
+          <pre><code class="language-javascript">
     // app.js
     import * as math from "lib/math";
     alert("2π = " + math.sum(math.pi, math.pi));
           </code></pre>
-          <pre><code>
+          <pre><code class="language-javascript">
     // otherApp.js
     import {sum, pi} from "lib/math";
     alert("2π = " + sum(pi, pi));
@@ -282,7 +295,7 @@
             Some additional features include <code>export default</code> and
             <code>export *</code>:
           </p>
-          <pre><code>
+          <pre><code class="language-javascript">
     // lib/mathplusplus.js
     export * from "lib/math";
     export var e = 2.71828182846;
@@ -290,7 +303,7 @@
         return Math.log(x);
     }
           </code></pre>
-          <pre><code>
+          <pre><code class="language-javascript">
     // app.js
     import ln, {pi, e} from "lib/mathplusplus";
     alert("2π = " + ln(e)*pi*2);
@@ -299,6 +312,16 @@
       </div>
     </main>
     <script src="index.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script> -->
+    <!-- <script>
+      hljs.highlightAll();
+    </script> -->
+    <script type="module">
+      import hljs from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/highlight.min.js";
+      // import javascript from "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/es/languages/javascript.min.js";
+      // hljs.registerLanguage("javascript", javascript);
+      hljs.highlightAll();
+    </script>
 
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
   </body>
