@@ -12,12 +12,11 @@ html body main.row {
   margin-right: 0px;
 }
 html body main.row pre {
-  background-color: rgb(207, 207, 207);
+  background-color: #303030;
+  background-color: #20201d;
   border: 1px solid #999;
 }
 html body main.row pre code {
-  background-color: #eee;
-  background-color: rgb(207, 207, 207);
   display: inline-block;
   padding: 20px;
 }
